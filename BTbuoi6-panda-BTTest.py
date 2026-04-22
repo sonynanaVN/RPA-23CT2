@@ -1,8 +1,11 @@
+import sys
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 import pandas as pd
 import numpy as np
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
-# 1. Tạo dữ liệu sinh viên (có null)
+
 data = {
     "MaSV": ["SV01","SV02","SV03","SV04","SV05","SV06","SV07","SV08","SV09","SV10"],
     "HoTen": ["An","Binh","Cuong","Dung","Huy","Khanh","Linh","Minh","Nam","Phuc"],
