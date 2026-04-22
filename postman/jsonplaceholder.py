@@ -2,9 +2,6 @@ import requests
 
 BASE_URL = "https://jsonplaceholder.typicode.com"
 
-# =========================
-# 1. CREATE - POST
-# =========================
 print("===== CREATE POST =====")
 
 new_post = {
@@ -16,15 +13,11 @@ new_post = {
 response = requests.post(f"{BASE_URL}/posts", json=new_post)
 
 print("Status Code:", response.status_code)
-print("Response:")
 print(response.json())
 
 print("\n")
 
 
-# =========================
-# 2. GET ALL POSTS
-# =========================
 print("===== GET ALL POSTS =====")
 
 response = requests.get(f"{BASE_URL}/posts")
@@ -33,29 +26,28 @@ print("Status Code:", response.status_code)
 
 posts = response.json()
 
-# In thử 3 bài đầu
-for post in posts[:3]:
-    print(post)
+for post in posts:
+    print("ID:", post["id"])
 
 print("\n")
 
 
-# =========================
-# 3. GET SINGLE POST
-# =========================
 print("===== GET SINGLE POST =====")
 
 response = requests.get(f"{BASE_URL}/posts/1")
 
 print("Status Code:", response.status_code)
-print(response.json())
+
+post = response.json()
+
+print("ID:", post["id"])
+print("Title:", post["title"])
+print("Body:", post["body"])
+print("User ID:", post["userId"])
 
 print("\n")
 
 
-# =========================
-# 4. UPDATE POST - PUT
-# =========================
 print("===== UPDATE POST =====")
 
 updated_post = {
@@ -76,9 +68,6 @@ print(response.json())
 print("\n")
 
 
-# =========================
-# 5. DELETE POST
-# =========================
 print("===== DELETE POST =====")
 
 response = requests.delete(f"{BASE_URL}/posts/1")
@@ -87,4 +76,4 @@ print("Status Code:", response.status_code)
 print("Response:", response.text)
 
 print("\n")
-print("🎉 Hoàn thành CRUD API!")
+print(" Hoàn thành CRUD API!")
