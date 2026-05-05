@@ -3,16 +3,12 @@ import time
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-# ----------------------------------------
-# CẤU HÌNH
-# ----------------------------------------
 GMAIL_USER     = "rokhananana98@gmail.com"
 GMAIL_PASSWORD = "zdvctubzkhivpetz"
 
-# ✅ Danh sách người nhận - thêm email vào đây
 SEND_TO_LIST = [
     "quocdat051020@gmail.com",
-    
+
 ]
 
 SUBJECT = "Lời xin chào từ đội ngũ SonaAI!"
@@ -54,9 +50,6 @@ Trân trọng,
 Team Sona 🚀
 """
 
-# ----------------------------------------
-# HÀM GỬI EMAIL
-# ----------------------------------------
 def send_email(to, subject, body):
     msg = MIMEMultipart()
     msg["From"]    = GMAIL_USER
@@ -81,9 +74,7 @@ def send_email(to, subject, body):
         print(f"❌ Lỗi không xác định [{to}]: {e}")
         return False
 
-# ----------------------------------------
-# MAIN - Gửi cho nhiều người
-# ----------------------------------------
+
 if __name__ == "__main__":
     total   = len(SEND_TO_LIST)
     success = 0
@@ -100,12 +91,12 @@ if __name__ == "__main__":
         else:
             failed += 1
 
-        # Chờ 2 giây giữa mỗi email để tránh bị Gmail chặn spam
+  
         if i < total:
             time.sleep(2)
 
     print(f"\n{'='*40}")
-    print(f"  ✅ Thành công : {success}")
-    print(f"  ❌ Thất bại   : {failed}")
-    print(f"  📊 Tổng       : {total}")
+    print(f"  Thành công : {success}")
+    print(f"  Thất bại   : {failed}")
+    print(f"  Tổng       : {total}")
     print(f"{'='*40}\n")
