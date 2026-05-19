@@ -1,111 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.10.8 on win32)" generated="2026-05-14T09:54:43.903842" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.10.8 on win32)" generated="2026-05-19T19:31:08.852773" rpa="false" schemaversion="5">
 <suite id="s1" name="Testrobot" source="D:\RPA-23CT2\robot\testrobot.robot">
 <kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2026-05-14T09:54:44.340117" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<msg time="2026-05-19T19:31:09.105116" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
 <arg>${URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-05-14T09:54:44.333666" elapsed="6.895704"/>
+<status status="PASS" start="2026-05-19T19:31:09.105116" elapsed="16.488224"/>
 </kw>
 <test id="s1-t1" name="TC01 - Kiem tra title trang Login" line="15">
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-05-14T09:54:51.273691" level="INFO">Page title is 'The Internet'.</msg>
+<msg time="2026-05-19T19:31:25.601346" level="INFO">Page title is 'The Internet'.</msg>
 <arg>${TITLE}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-05-14T09:54:51.234107" elapsed="0.039584"/>
+<status status="PASS" start="2026-05-19T19:31:25.595352" elapsed="0.005994"/>
 </kw>
 <doc>Kiểm tra title của website</doc>
-<status status="PASS" start="2026-05-14T09:54:51.229370" elapsed="0.050136"/>
+<status status="PASS" start="2026-05-19T19:31:25.593340" elapsed="0.008006"/>
 </test>
 <test id="s1-t2" name="TC02 - Dang nhap thanh cong" line="19">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-05-14T09:54:51.286446" level="INFO">Opening url 'https://the-internet.herokuapp.com/login'</msg>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-05-19T19:31:25.603431" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
 <arg>${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-05-14T09:54:51.286446" elapsed="0.390720"/>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-05-19T19:31:25.603431" elapsed="60.624141"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-05-19T19:32:26.228516" level="INFO">Opened Browser Successfully</msg>
+<arg>Opened Browser Successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-05-19T19:32:26.228516" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-19T19:32:30.244698" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-19T19:32:26.228516" elapsed="4.018913"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-14T09:54:51.677166" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<msg time="2026-05-19T19:32:30.253895" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
 <arg>id=username</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-14T09:54:51.677166" elapsed="0.332536"/>
+<status status="PASS" start="2026-05-19T19:32:30.252212" elapsed="0.146586"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-14T09:54:52.015384" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id=password'.</msg>
+<msg time="2026-05-19T19:32:30.400257" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id=password'.</msg>
 <arg>id=password</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-14T09:54:52.012936" elapsed="0.265498"/>
+<status status="PASS" start="2026-05-19T19:32:30.398798" elapsed="0.088998"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-05-14T09:54:52.282593" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
-<arg>css=button[type='submit']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-14T09:54:52.278434" elapsed="0.952133"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-05-14T09:54:53.322733" level="INFO">Current page contains text 'You logged into a secure area!'.</msg>
-<arg>You logged into a secure area!</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-05-14T09:54:53.253108" elapsed="0.069625"/>
-</kw>
-<doc>Đăng nhập với tài khoản hợp lệ và kiểm tra đăng nhập thành công</doc>
-<status status="PASS" start="2026-05-14T09:54:51.281518" elapsed="2.041215"/>
+<status status="PASS" start="2026-05-19T19:31:25.602350" elapsed="64.885446"/>
 </test>
-<test id="s1-t3" name="TC03 - Dang nhap that bai voi username sai" line="27">
+<test id="s1-t3" name="TC03 - Dang nhap that bai voi username sai" line="32">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-05-14T09:54:53.332751" level="INFO">Opening url 'https://the-internet.herokuapp.com/login'</msg>
+<msg time="2026-05-19T19:32:30.488791" level="INFO">Opening url 'https://the-internet.herokuapp.com/login'</msg>
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-05-14T09:54:53.332751" elapsed="0.365336"/>
+<status status="PASS" start="2026-05-19T19:32:30.488791" elapsed="0.487127"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-14T09:54:53.703255" level="INFO">Typing text 'invaliduser' into text field 'id=username'.</msg>
+<msg time="2026-05-19T19:32:30.978008" level="INFO">Typing text 'invaliduser' into text field 'id=username'.</msg>
 <arg>id=username</arg>
 <arg>invaliduser</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-14T09:54:53.701241" elapsed="0.478853"/>
+<status status="PASS" start="2026-05-19T19:32:30.976919" elapsed="0.071399"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-14T09:54:54.208255" level="INFO">Typing text 'wrongpassword' into text field 'id=password'.</msg>
+<msg time="2026-05-19T19:32:31.048318" level="INFO">Typing text 'wrongpassword' into text field 'id=password'.</msg>
 <arg>id=password</arg>
 <arg>wrongpassword</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-14T09:54:54.206235" elapsed="0.257041"/>
+<status status="PASS" start="2026-05-19T19:32:31.048318" elapsed="0.064025"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-05-14T09:54:54.466217" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
+<msg time="2026-05-19T19:32:31.112343" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
 <arg>css=button[type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-14T09:54:54.465630" elapsed="0.239453"/>
+<status status="PASS" start="2026-05-19T19:32:31.112343" elapsed="0.996041"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<msg time="2026-05-14T09:55:05.036589" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-05-14T09:55:05.036589" level="FAIL">Text 'Your username is invalid!' did not appear in 10 seconds.</msg>
 <arg>Your username is invalid!</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="FAIL" start="2026-05-14T09:54:54.707918" elapsed="10.328671">Text 'Your username is invalid!' did not appear in 10 seconds.</status>
+<status status="PASS" start="2026-05-19T19:32:32.108384" elapsed="0.015975"/>
 </kw>
 <doc>Đăng nhập với tài khoản không hợp lệ và kiểm tra thông báo lỗi</doc>
-<status status="FAIL" start="2026-05-14T09:54:53.332751" elapsed="11.703838">Text 'Your username is invalid!' did not appear in 10 seconds.</status>
+<status status="PASS" start="2026-05-19T19:32:30.488791" elapsed="1.636948"/>
 </test>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-05-14T09:55:05.036589" elapsed="2.622541"/>
+<status status="PASS" start="2026-05-19T19:32:32.126245" elapsed="2.162849"/>
 </kw>
-<status status="FAIL" start="2026-05-14T09:54:43.907873" elapsed="23.751257"/>
+<status status="PASS" start="2026-05-19T19:31:08.855286" elapsed="85.433808"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="1" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Testrobot" id="s1" pass="2" fail="1" skip="0">Testrobot</stat>
+<stat name="Testrobot" id="s1" pass="3" fail="0" skip="0">Testrobot</stat>
 </suite>
 </statistics>
 <errors>

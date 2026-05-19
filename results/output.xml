@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.10.8 on win32)" generated="2026-05-19T19:17:09.910093" rpa="false" schemaversion="5">
+<suite id="s1" name="RPA-23CT2" source="D:\RPA-23CT2">
+<suite id="s1-s1" name="Robot" source="D:\RPA-23CT2\Robot">
+<suite id="s1-s1-s1" name="Testrobot" source="D:\RPA-23CT2\Robot\testrobot.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-05-19T19:17:10.392126" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-05-19T19:17:10.391127" elapsed="4.655093"/>
+</kw>
+<test id="s1-s1-s1-t1" name="TC01 - Kiem tra title trang Login" line="15">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2026-05-19T19:17:41.075862" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-05-19T19:17:41.075862" level="FAIL">Title should have been 'The Internet' but was ''.</msg>
+<arg>${TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="FAIL" start="2026-05-19T19:17:15.059401" elapsed="26.028669">Title should have been 'The Internet' but was ''.</status>
+</kw>
+<doc>Kiểm tra title của website</doc>
+<status status="FAIL" start="2026-05-19T19:17:15.047229" elapsed="26.052954">Title should have been 'The Internet' but was ''.</status>
+</test>
+<test id="s1-s1-s1-t2" name="TC02 - Dang nhap thanh cong" line="19">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-05-19T19:17:41.129531" level="INFO">Opening browser 'chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-05-19T19:17:41.128272" elapsed="18.770954"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-05-19T19:17:59.902472" level="INFO">Opened Browser Successfully</msg>
+<arg>Opened Browser Successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-05-19T19:17:59.900216" elapsed="0.003512"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-19T19:18:03.918383" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-19T19:17:59.904742" elapsed="4.014647"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-19T19:18:03.920415" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-19T19:18:03.919389" elapsed="0.092166"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-19T19:18:04.013068" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-19T19:18:04.012060" elapsed="0.108697"/>
+</kw>
+<status status="PASS" start="2026-05-19T19:17:41.115460" elapsed="23.005297"/>
+</test>
+<test id="s1-s1-s1-t3" name="TC03 - Dang nhap that bai voi username sai" line="32">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-05-19T19:18:04.154949" level="INFO">Opening url 'https://the-internet.herokuapp.com/login'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-05-19T19:18:04.147154" elapsed="1.316156"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-19T19:18:05.464314" level="INFO">Typing text 'invaliduser' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>invaliduser</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-19T19:18:05.463310" elapsed="0.067279"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-19T19:18:05.532592" level="INFO">Typing text 'wrongpassword' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>wrongpassword</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-19T19:18:05.531589" elapsed="0.071342"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-19T19:18:05.604410" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
+<arg>css=button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-19T19:18:05.602931" elapsed="0.935029"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Your username is invalid!</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-05-19T19:18:06.538962" elapsed="0.026353"/>
+</kw>
+<doc>Đăng nhập với tài khoản không hợp lệ và kiểm tra thông báo lỗi</doc>
+<status status="PASS" start="2026-05-19T19:18:04.128118" elapsed="2.437721"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-05-19T19:18:06.572472" elapsed="2.236352"/>
+</kw>
+<status status="FAIL" start="2026-05-19T19:17:10.000139" elapsed="58.809690"/>
+</suite>
+<status status="FAIL" start="2026-05-19T19:17:09.986090" elapsed="58.837086"/>
+</suite>
+<status status="FAIL" start="2026-05-19T19:17:09.937027" elapsed="58.895552"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="RPA-23CT2" id="s1" pass="2" fail="1" skip="0">RPA-23CT2</stat>
+<stat name="Robot" id="s1-s1" pass="2" fail="1" skip="0">RPA-23CT2.Robot</stat>
+<stat name="Testrobot" id="s1-s1-s1" pass="2" fail="1" skip="0">RPA-23CT2.Robot.Testrobot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

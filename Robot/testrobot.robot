@@ -23,6 +23,11 @@ TC02 - Dang nhap thanh cong
     Input Text        id=password    ${PASSWORD}
     Click Button      css=button[type='submit']
     Page Should Contain    You logged into a secure area!
+    # Open Browser    ${URL}    chrome
+    # Log  Opened Browser Successfully
+    # Sleep  4s
+    # Input Text    id=username    ${USERNAME}
+    # Input Text    id=password    ${PASSWORD}
 
 TC03 - Dang nhap that bai voi username sai
     [Documentation]    Đăng nhập với tài khoản không hợp lệ và kiểm tra thông báo lỗi
